@@ -19,10 +19,6 @@
  * $HEADER$
  */
  
-// HERE I ADDED THE FUNCTION// 
-#include "perfexpert_database.h"
-//                          //
-
 #ifdef __cplusplus
 extern "C" {
 #endif
