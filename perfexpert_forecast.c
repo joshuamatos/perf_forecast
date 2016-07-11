@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
    char *sql;
 
    /* Open database */
-   rc = sqlite3_open("test.db", &db);
+   rc =  perfexpert_database_connect("test.db", &db);
    if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       return(0);
@@ -70,10 +70,10 @@ scanf(%d,&given_counter);
 for (int counter = 0; counter < given_counter; ++counter)
 {
 	// THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS 
-	sql ="INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS)"
+	sql = "INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS)"
 	//REMEBER TO INCLUDE ALL THE PRINTF//
 //######################################################################################//
-c_snprintf=snprintf (sql,buffer,100,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,NAME,AGE,ADDRESS);
+c_snprintf = snprintf (sql,buffer,100,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,NAME,AGE,ADDRESS);
 //###############THIS##IS##INCORRECT###################################################//
 
 //NO SE SI ES & o el Pointer *
