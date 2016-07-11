@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
       return(0);
    }else{
       fprintf(stderr, "Opened database successfully\n"); //abracadabra
-      fprintf(stderr,""Its alive Its alive "\n");
+      fprintf(stderr,"Its alive Its alive \n");
    }
 
 //SQLITE
@@ -54,9 +54,9 @@ int main(int argc, char* argv[])
 }
 
 //THIS IS THE INFORMATION THAT IM GOING TO ASK THE USER FOR//
-int given_counter,age;
-long float salary;
-char names[],company_name[];
+int given_counter,age,c_snprintf,c_snprintf2;
+char names=[35];
+char buffer= [1000];
 //
 
 //THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE
@@ -68,9 +68,11 @@ scanf(%d,&given_counter);
 for (int counter = 0; counter < given_counter; ++counter)
 {
 	/* THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS */
-	sql ="INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS,SALARY)"
+	sql ="INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS)"
 	//REMEBER TO INCLUDE ALL THE PRINTF//
-	snprintf (sql,age , ,"INSERT INTO DATABASE'%d','%s','%d','%s',%f;",ID,NAME,AGE,ADDRESS,SALARY);
+//######################################################################################//
+c_snprintf=snprintf (sql,buffer,100,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,NAME,AGE,ADDRESS);
+//###############THIS##IS##INCORRECT###################################################//
 
 //NO SE SI ES & o el Pointer *
           //"VALUES(&counter,'&names','&age','company_name',&salary)"
