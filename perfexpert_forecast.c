@@ -56,8 +56,8 @@ int main(int argc, char* argv[])
 //THIS IS THE INFORMATION THAT IM GOING TO ASK THE USER FOR//
 int given_counter,age,c_snprintf,c_snprintf2;
 char names[35];
-char buffer[100];
-char buffer_2[100]
+char buffer[4096];
+char buffer_2[4096];
 //
 
 //THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE
