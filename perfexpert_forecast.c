@@ -73,7 +73,7 @@ for (int counter = 0; counter < given_counter; ++counter)
 	sql = "INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS)"
 	//REMEBER TO INCLUDE ALL THE PRINTF//
 //######################################################################################//
-c_snprintf = snprintf (sql,buffer,100,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,NAME,AGE,ADDRESS);
+c_snprintf = snprintf (sql,buffer,4096,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,NAME,AGE,ADDRESS);
 //###############THIS##IS##INCORRECT###################################################//
 
 //NO SE SI ES & o el Pointer *
