@@ -55,11 +55,13 @@ int main(int argc, char* argv[])
 
 //THIS IS THE INFORMATION THAT IM GOING TO ASK THE USER FOR//
 int given_counter,age,c_snprintf,c_snprintf2;
-char names=[35];
-char buffer= [1000];
+char names[35];
+char buffer[100];
+char buffer_2[100]
 //
 
 //THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE
+//sprintf & sscanf if it does not work//
 printf("Enter de number of column you are going to add in the database\n");
 scanf(%d,&given_counter);
 
@@ -67,7 +69,7 @@ scanf(%d,&given_counter);
 //MUST INCLUDE A OPTION JUST IN CASE, THE INFORMATION INPUT IS WRONG//
 for (int counter = 0; counter < given_counter; ++counter)
 {
-	/* THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS */
+	// THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS 
 	sql ="INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS)"
 	//REMEBER TO INCLUDE ALL THE PRINTF//
 //######################################################################################//
@@ -76,7 +78,5 @@ c_snprintf=snprintf (sql,buffer,100,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,
 
 //NO SE SI ES & o el Pointer *
           //"VALUES(&counter,'&names','&age','company_name',&salary)"
-	
-
-/*	system("cls");*/ //THIS IS JUST IN CASE....
+//system("cls");THIS IS JUST IN CASE....
 }//Chewie we are home...
