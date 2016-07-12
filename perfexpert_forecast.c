@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
    char *sql;
 
    /* Open database */
-   rc =  perfexpert_database_connect("test.db", &db);
+   rc =  perfexpert_database_connect(&db,"test.db");
    if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       return(0);
@@ -49,13 +49,10 @@ int main(int argc, char* argv[])
    }else{
       fprintf(stdout, "Records created successfully\n");
    }
-   sqlite3_close(db);
-   return 0;
-}
 
 //THIS IS THE INFORMATION THAT IM GOING TO ASK THE USER FOR//
-int given_counter,age,c_snprintf,c_snprintf2;
-char names[35];
+int given_counter,age,c_snprintf,c_snprintf2,counter,id;
+char name[35];
 char buffer[4096];
 char buffer_2[4096];
 //
@@ -63,20 +60,23 @@ char buffer_2[4096];
 //THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE
 //sprintf & sscanf if it does not work//
 printf("Enter de number of column you are going to add in the database\n");
-scanf(%d,&given_counter);
+scanf("%d",&given_counter);
 
 //THIS LOOP IS TO DO THE SAME THAT IS IN THE CORNER UP BUT DOING IT MANUALLY//
 //MUST INCLUDE A OPTION JUST IN CASE, THE INFORMATION INPUT IS WRONG//
-for (int counter = 0; counter < given_counter; ++counter)
+for (counter = 0; counter < given_counter; ++counter)
 {
 	// THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS 
-	sql = "INSERT INTO DATABASE(ID,NAME,AGE,ADDRESS)"
 	//REMEBER TO INCLUDE ALL THE PRINTF//
 //######################################################################################//
-c_snprintf = snprintf (sql,buffer,4096,"INSERT INTO DATABASE'%d','%s','%d',%s;",ID,NAME,AGE,ADDRESS);
+c_snprintf = snprintf (sql,4096,"INSERT INTO PERFEXPERT_FORECAST %d,'%s',%d;",id,name,age);
 //###############THIS##IS##INCORRECT###################################################//
 
 //NO SE SI ES & o el Pointer *
           //"VALUES(&counter,'&names','&age','company_name',&salary)"
 //system("cls");THIS IS JUST IN CASE....
 }//Chewie we are home...
+   sqlite3_close(db);
+   return 0;
+//}
+}
