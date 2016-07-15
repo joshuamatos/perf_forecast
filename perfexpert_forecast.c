@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
    char *sql;
 
    /* Open database */
-   rc =  perfexpert_database_connect(&db,"test.db");
+   rc =  perfexpert_database_connect(&db,"perf_forecasttable.db"5);
    if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       return(0);
