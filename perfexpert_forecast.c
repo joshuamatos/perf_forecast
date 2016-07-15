@@ -1,4 +1,3 @@
-
 /*sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "  \
          "VALUES (1, 'Paul', 32, 'California', 20000.00 ); " \
          "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "  \
@@ -28,39 +27,37 @@ int main(int argc, char* argv[])
    sqlite3 *db;
    char *zErrMsg = 0;
    int rc;
-   char *sql;
+   char sql[4096];
 
    /* Open database */
-   rc =  perfexpert_database_connect(&db,"test.db");
+   rc =  perfexpert_database_connect(&db,"perf_forecasttable.db");
    if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-      return(0);
-   }else{
+ 	     return(0);
+           }	
+   else{
       fprintf(stderr, "Opened database successfully\n"); //abracadabra
-      fprintf(stderr,"Its alive Its alive \n");
-   }
+       }
 
 //SQLITE
 
-    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+  	 rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
    if( rc != SQLITE_OK ){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
-      sqlite3_free(zErrMsg);
-   }else{
-      fprintf(stdout, "Records created successfully\n");
+      	sqlite3_free(zErrMsg);
    }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
 
 //THIS IS THE INFORMATION THAT IM GOING TO ASK THE USER FOR//
 int given_counter,age,c_snprintf,c_snprintf2,counter,id;
 char name[35];
-char buffer[4096];
-char buffer_2[4096];
-//
 
 //THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE
 //sprintf & sscanf if it does not work//
 printf("Enter de number of column you are going to add in the database\n");
-scanf("%d",&given_counter);
+	scanf("%d",&given_counter);
 
 //THIS LOOP IS TO DO THE SAME THAT IS IN THE CORNER UP BUT DOING IT MANUALLY//
 //MUST INCLUDE A OPTION JUST IN CASE, THE INFORMATION INPUT IS WRONG//
@@ -69,7 +66,8 @@ for (counter = 0; counter < given_counter; ++counter)
 	// THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS 
 	//REMEBER TO INCLUDE ALL THE PRINTF//
 //######################################################################################//
-c_snprintf = snprintf (sql,4096,"INSERT INTO PERFEXPERT_FORECAST %d,'%s',%d;",id,name,age);
+c_snprintf = snprintf(sql,4096,"INSERT INTO PERFEXPERT_FORECAST %d,'%s',%d;",counter,name,age);
+printf("%s\n",sql);
 //###############THIS##IS##INCORRECT###################################################//
 
 //NO SE SI ES & o el Pointer *
