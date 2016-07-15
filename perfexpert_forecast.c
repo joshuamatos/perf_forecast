@@ -6,6 +6,7 @@
          "VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );" \
          "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)" \
          "VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );";*/
+ // blah
 //ESTOY BUSCANDO LA MANERA DE COMO PONER LO DE ARRIBA EN UN LOOP//
 
 #include <stdio.h>
