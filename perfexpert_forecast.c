@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 
 /*This will creat the table with certain arquitecture*/
 a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db (ID INT primary_key NOT NULL UNIQUE,architecture INT NOT NULL
-,lower_bound REAL NOT NULL,upper_bound REAL NOT NULL,forecast INT NOT NULL");" 
+,lower_bound REAL NOT NULL,upper_bound REAL NOT NULL,forecast INT NOT NULL"); 
 );//end of a_snprintf
 
 printf("Table Created Successfully")
