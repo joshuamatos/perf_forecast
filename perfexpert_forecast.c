@@ -71,30 +71,26 @@ printf("Table Created Successfully")
 
 //MUST INCLUDE A OPTION JUST IN CASE, THE INFORMATION INPUT IS WRONG//
 while{
-//	c_snprintf = snprintf(sql,4096,"'%s', %d,'%s',%d;",excution_sql,counter,name,age);
 	printf("Enter Lower_Bound data");
-	scanf("", );
+	scanf("%f",&lower_bound);
 	printf("Enter Upper_Bound data");
-	scanf("", );
+	scanf("%f",&upper_bound );
 	printf("Enter Forecast data")/* this will be given in the future but for reference*/
-	scanf("",)
-     /* printf("Is the data correct?, please enter 0 if incorrect")
-	scanf("%d",&exit); 
-     */
-	printf("%s\n",sql);
-	counter++;
-	if(edit_option==0)
-	{
-	//
-	}
-//   }(counter<=given_counter);
-//     }(counter<=given_counter && edit_option!=0 );
-     
+	scanf("%f",&forecast);
+      }(counter<=given_counter);//end of while
+    
+while{
+	c_snprintf = snprintf(sql,4096,"'%s', %d,'%s',%d;",excution_sql,counter,name,age);
+		printf("%s\n",sql);
+			counter++;
+}(counter<=given_counter);//end of while      
+    
    sqlite3_close(db);
    return 0;
 }//end of int main
 
 
+/*
 for (counter = 0; counter < given_counter; ++counter)
 {
 	// THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS 
