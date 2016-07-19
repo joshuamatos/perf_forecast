@@ -17,10 +17,11 @@ int main(int argc, char* argv[])
 {
    sqlite3 *db;
    char *zErrMsg = 0;
-   int rc,given_counter,age,a_snprintf,b_snprintf,c_snprintf2,counter,id,edit_option;
+   int rc,given_counter,age,a_snprintf,b_snprintf,c_snprintf2,counter,id,edit_option,primary_key;
    int architecture = 6;
    float lower_bound,upper_bound,forecast;
-   char sql[4096],char name[35];
+   char sql[4096];
+   char name[35];
    char excution_sql[] = "INSERT VALUE INTO";
    
    /* Open database */
@@ -34,8 +35,8 @@ int main(int argc, char* argv[])
        }
 
 /*This will creat the table with certain arquitecture*/
-a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db (ID INT PRIMATY KEY NOT NULL UNIQUE,ARCHITECTURE INT NOT NULL
-,LOWER_BOUND REAL NOT NULL,UPPER_BOUND REAL NOT NULL,FORECAST INT NOT NULL);" 
+a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db (ID INT primary_key NOT NULL UNIQUE,architecture INT NOT NULL
+,lower_bound REAL NOT NULL,upper_bound REAL NOT NULL,forecast INT NOT NULL");" 
 );//end of a_snprintf
 
 printf("Table Created Successfully")
