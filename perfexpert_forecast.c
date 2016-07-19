@@ -1,14 +1,4 @@
-/*sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "  \
-         "VALUES (1, 'Paul', 32, 'California', 20000.00 ); " \
-         "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "  \
-         "VALUES (2, 'Allen', 25, 'Texas', 15000.00 ); "     \
-         "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)" \
-         "VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );" \
-         "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)" \
-         "VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );";*/
- // blah blah
-//ESTOY BUSCANDO LA MANERA DE COMO PONER LO DE ARRIBA EN UN LOOP//
-
+//INTRO BLAHBLAH//
 #include <stdio.h>
 #include <stdlib.h>
 #include <sqlite3.h> 
@@ -70,17 +60,20 @@ printf("Table Created Successfully")
 /*This loop will insert one by one the values desire */
 
 //MUST INCLUDE A OPTION JUST IN CASE, THE INFORMATION INPUT IS WRONG//
+/* so that I can try to insert data manually
 while{
 	printf("Enter Lower_Bound data");
 	scanf("%f",&lower_bound);
 	printf("Enter Upper_Bound data");
 	scanf("%f",&upper_bound );
-	printf("Enter Forecast data")/* this will be given in the future but for reference*/
+	printf("Enter Forecast data")// this will be given in the future but for reference
 	scanf("%f",&forecast);
       }(counter<=given_counter);//end of while
-    
+*/    
+/*Expected function is to read what is in the table*/
 while{
-	c_snprintf = snprintf(sql,4096,"'%s', %d,'%s',%d;",excution_sql,counter,name,age);
+	//c_snprintf = snprintf(sql,4096,"'%s', %d,'%s',%d;",excution_sql,counter,name,age);
+      	c_snprintf = snprintf(sql,4096,"INSERT INTO database1.db VALUES (%d,%d,%f,%f,%f",counter,architecture,lower_bound,upper_bound,forecast);
 		printf("%s\n",sql);
 			counter++;
 }(counter<=given_counter);//end of while      
