@@ -20,7 +20,8 @@ int main(int argc, char* argv[])
    int rc,given_counter,age,a_snprintf,b_snprintf,c_snprintf2,counter,id,edit_option,primary_key;
    int architecture = 6;
    float lower_bound,upper_bound,forecast;
-   char sql[4096];
+   //char sql[4096];
+   char *sql;
    char name[35];
    char excution_sql[] = "INSERT VALUE INTO";
    
