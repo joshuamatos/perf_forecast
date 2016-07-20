@@ -35,11 +35,11 @@ int main(int argc, char* argv[])
       fprintf(stderr, "Opened database successfully\n"); //abracadabra
        }
 	/*Creating SQLite perfexpert_forecast Table*/
-	sql = "CREATE TABLE database1.db("	\
-	"ID INT primary_key NOT NULL UNIQUE,"	\
-	"architecture INT NOT NULL,"	\
-	"lower_bound REAL NOT NULL,"	\
-	"upper_bound REAL NOT NULL,"	\
+	sql = "CREATE TABLE database1.db(" \
+	"ID INT primary_key NOT NULL UNIQUE," \
+	"architecture INT NOT NULL," \
+	"lower_bound REAL NOT NULL," \
+	"upper_bound REAL NOT NULL," \
 	"forecast INT NOT NULL;)";
 
 /*This will creat the table with certain arquitecture
