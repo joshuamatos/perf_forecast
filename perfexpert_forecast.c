@@ -33,23 +33,25 @@ int main(int argc, char* argv[])
    else{
       fprintf(stderr, "Opened database successfully\n"); //abracadabra
        }
+	/*Creating SQLite perfexpert_forecast Table*/
+	sql = "CREATE TABLE database1.db("	\
+	"ID INT primary_key NOT NULL UNIQUE,"	\
+	"architecture INT NOT NULL,"	\
+	"lower_bound REAL NOT NULL,"	\
+	"upper_bound REAL NOT NULL,"	\
+	"forecast INT NOT NULL;)";
 
-/*This will creat the table with certain arquitecture*/
+/*This will creat the table with certain arquitecture
 a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db ID INT primary_key NOT NULL UNIQUE,architecture INT NOT NULL
 ,lower_bound REAL NOT NULL,upper_bound REAL NOT NULL,forecast INT NOT NULL;"); 
-);//end of a_snprintf
-
-printf("Table Created Successfully")
-
+);//end of a_snprintf */
 
 	/*SQLITE*/
-  	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-  	
-   if( rc != SQLITE_OK ){
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       	sqlite3_free(zErrMsg);
    }
-   
    else{
       fprintf(stdout, "Records created successfully\n");
        }
