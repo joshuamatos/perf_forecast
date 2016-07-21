@@ -20,7 +20,6 @@ int main(int argc, char* argv[])
    int rc,given_counter,age,a_snprintf,b_snprintf,c_snprintf2,counter,id,edit_option,primary_key;
    int architecture = 6;
    float lower_bound,upper_bound,forecast;
-   //char sql[4096];
    char sql[4096];
    char name[35];
    char excution_sql[] = "INSERT VALUE INTO";
@@ -38,6 +37,7 @@ int main(int argc, char* argv[])
    snprintf (sql, 4096, "CREATE TABLE perfexpert_forecast (ID INT primary_key NOT NULL UNIQUE, \
              architecture INT NOT NULL, lower_bound REAL NOT NULL, upper_bound REAL NOT NULL, \
              forecast INT NOT NULL);"); 
+             
 /*	sql = "CREATE TABLE perfexpert_forecast (" \ //Created table perfexpert_forecast in database.db
 	"ID INT primary_key NOT NULL UNIQUE," \
 	"architecture INT NOT NULL," \
@@ -45,12 +45,6 @@ int main(int argc, char* argv[])
 	"upper_bound REAL NOT NULL," \
 	"forecast INT NOT NULL;)";
 */
-
-/*This will creat the table with certain arquitecture
-a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db ID INT primary_key NOT NULL UNIQUE,architecture INT NOT NULL
-,lower_bound REAL NOT NULL,upper_bound REAL NOT NULL,forecast INT NOT NULL;"); 
-);//end of a_snprintf */
-
 	/*SQLITE*/
   rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	 if( rc != SQLITE_OK ){
@@ -79,10 +73,20 @@ while{
       }(counter<=given_counter);//end of while
 */    
 /*Expected function is to read what is in the table*/
-    snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (0,6,0,0.5,16)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (1,6,0,0.5,16)");
     // Put here the command to run a sql statement
-    snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (1,6,0.5,0.6,14)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (2,6,0.5,0.6,14)");
     // Again, put here the command to run a sql statement
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (3,6,0.5,0.6,12)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (4,6,0.65,0.65,10)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (5,6,0.70,0.70,8)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (6,6,0.75,0.75,6)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (7,6,0.80,0.80,5)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (8,6,0.90,0.90,4)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (9,6,1.00,1.00,3)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (10,6,1.50,1.50,2)");
+      snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (11,6,2.50,100,1)");
+
     // Here, add the next values to the table until the table is created
     /*  
 while{
@@ -95,17 +99,3 @@ while{
    sqlite3_close(db);
    return 0;
 }//end of int main
-
-
-/*
-for (counter = 0; counter < given_counter; ++counter)
-{
-	// THIS IS GOING TO ASK FOR ALL THE SQL INFORMATION NECESSARY FOR THE NECESSARY COLUMNS 
-//######################################################################################//
-c_snprintf = snprintf(sql,4096,"INSERT INTO PERFEXPERT_FORECAST %d,'%s',%d;",counter,name,age);
-printf("%s\n",sql);
-//###############THIS##IS##INCORRECT###################################################//
-
-//system("cls");THIS IS JUST IN CASE....
-}
-*/
