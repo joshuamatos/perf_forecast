@@ -21,12 +21,12 @@ int main(int argc, char* argv[])
    int architecture = 6;
    float lower_bound,upper_bound,forecast;
    //char sql[4096];
-   char *sql;
+   char sql[4096];
    char name[35];
    char excution_sql[] = "INSERT VALUE INTO";
    
    /* Open database */
-   rc =  perfexpert_database_connect(&db,"perf_forecasttable.db");
+   rc =  perfexpert_database_connect(&db,"database.db"); //Changed the name of the DB to database.db
    if( rc ){
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
  	     return(0);
@@ -35,12 +35,16 @@ int main(int argc, char* argv[])
       fprintf(stderr, "Opened database successfully\n"); //abracadabra
        }
 	/*Creating SQLite perfexpert_forecast Table*/
-	sql = "CREATE TABLE database1.db(" \
+   snprintf (sql, 4096, "CREATE TABLE perfexpert_forecast (ID INT primary_key NOT NULL UNIQUE, \
+             architecture INT NOT NULL, lower_bound REAL NOT NULL, upper_bound REAL NOT NULL, \
+             forecast INT NOT NULL);"); 
+/*	sql = "CREATE TABLE perfexpert_forecast (" \ //Created table perfexpert_forecast in database.db
 	"ID INT primary_key NOT NULL UNIQUE," \
 	"architecture INT NOT NULL," \
 	"lower_bound REAL NOT NULL," \
 	"upper_bound REAL NOT NULL," \
 	"forecast INT NOT NULL;)";
+*/
 
 /*This will creat the table with certain arquitecture
 a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db ID INT primary_key NOT NULL UNIQUE,architecture INT NOT NULL
@@ -58,8 +62,8 @@ a_snprintf = snprintf(sql,4096,"CREATE TABLE database1.db ID INT primary_key NOT
        }
 
 /*THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE*/
-	printf("Enter de number of column you are going to insert in the database\n");
-		scanf("%d",&given_counter);
+//	printf("Enter de number of column you are going to insert in the database\n");
+//		scanf("%d",&given_counter);
 
 /*This loop will insert one by one the values desire */
 
@@ -75,13 +79,19 @@ while{
       }(counter<=given_counter);//end of while
 */    
 /*Expected function is to read what is in the table*/
+    snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (0,6,0,0.5,16)");
+    // Put here the command to run a sql statement
+    snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (1,6,0.5,0.6,14)");
+    // Again, put here the command to run a sql statement
+    // Here, add the next values to the table until the table is created
+    /*  
 while{
 	//c_snprintf = snprintf(sql,4096,"'%s', %d,'%s',%d;",excution_sql,counter,name,age);
-      	c_snprintf = snprintf(sql,4096,"INSERT INTO database1.db VALUES (%d,%d,%f,%f,%f",counter,architecture,lower_bound,upper_bound,forecast);
+    rc = snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (%d,%d,%f,%f,%f",counter,architecture,lower_bound,upper_bound,forecast);
 		printf("%s\n",sql);
 			counter++;
 }(counter<=given_counter);//end of while      
-    
+    */
    sqlite3_close(db);
    return 0;
 }//end of int main
