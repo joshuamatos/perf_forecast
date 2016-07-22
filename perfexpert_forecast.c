@@ -34,10 +34,6 @@ int main(int argc, char* argv[])
       fprintf(stderr, "Opened database successfully\n"); //abracadabra
        }
 	/*Creating SQLite perfexpert_forecast Table*/
-   snprintf (sql, 4096, "CREATE TABLE perfexpert_forecast (ID INT primary_key NOT NULL UNIQUE, \
-             architecture INT NOT NULL, lower_bound REAL NOT NULL, upper_bound REAL NOT NULL, \
-             forecast INT NOT NULL);"); 
-             
 /*	sql = "CREATE TABLE perfexpert_forecast (" \ //Created table perfexpert_forecast in database.db
 	"ID INT primary_key NOT NULL UNIQUE," \
 	"architecture INT NOT NULL," \
@@ -54,7 +50,9 @@ int main(int argc, char* argv[])
    else{
       fprintf(stdout, "Records created successfully\n");
        }
-
+   snprintf (sql, 4096, "CREATE TABLE perfexpert_forecast (ID INT primary_key NOT NULL UNIQUE, \
+             architecture INT NOT NULL, lower_bound REAL NOT NULL, upper_bound REAL NOT NULL, \
+             forecast INT NOT NULL);"); 
 /*THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE*/
 //	printf("Enter de number of column you are going to insert in the database\n");
 //		scanf("%d",&given_counter);
