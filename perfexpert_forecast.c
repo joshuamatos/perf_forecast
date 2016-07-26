@@ -42,7 +42,10 @@ int main(int argc, char* argv[])
 	"forecast INT NOT NULL;)";
 */
 	/*SQLITE*/
-  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+   snprintf (sql, 4096, "CREATE TABLE perfexpert_forecast (ID INT primary_key NOT NULL UNIQUE, \
+             architecture INT NOT NULL, lower_bound REAL NOT NULL, upper_bound REAL NOT NULL, \
+             forecast INT NOT NULL);");
+   rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	 if( rc != SQLITE_OK ){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       	sqlite3_free(zErrMsg);
@@ -50,9 +53,6 @@ int main(int argc, char* argv[])
    else{
       fprintf(stdout, "Records created successfully\n");
        }
-   snprintf (sql, 4096, "CREATE TABLE perfexpert_forecast (ID INT primary_key NOT NULL UNIQUE, \
-             architecture INT NOT NULL, lower_bound REAL NOT NULL, upper_bound REAL NOT NULL, \
-             forecast INT NOT NULL);"); 
 /*THIS PRINTF IS GOING TO DICTATE HOW BIG IS GOING TO BE THE DATABASE*/
 //	printf("Enter de number of column you are going to insert in the database\n");
 //		scanf("%d",&given_counter);
@@ -71,18 +71,104 @@ while{
       }(counter<=given_counter);//end of while
 */    
 /*Expected function is to read what is in the table*/
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (1,6,0,0.5,16)");
-    // Put here the command to run a sql statement
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (2,6,0.5,0.6,14)");
-    // Again, put here the command to run a sql statement
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (3,6,0.5,0.6,12)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (4,6,0.65,0.65,10)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (5,6,0.70,0.70,8)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (6,6,0.75,0.75,6)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (7,6,0.80,0.80,5)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (8,6,0.90,0.90,4)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (9,6,1.00,1.00,3)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (10,6,1.50,1.50,2)");
+  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	 if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      	sqlite3_free(zErrMsg);
+   }
+   else{
+      fprintf(stdout, "Records created successfully\n");
+       }
       snprintf(sql,4096,"INSERT INTO perfexpert_forecast VALUES (11,6,2.50,100,1)");
 
     // Here, add the next values to the table until the table is created
